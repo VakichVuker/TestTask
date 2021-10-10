@@ -13,7 +13,7 @@
 	$database = new Database();
 	$db = $database->getConnection();
 	$parse = new SoundCloudParser($database);
-	$parse->parse_artist($link_for_parse . '/tracks');
+	$parse->parse_artist($link_for_parse);
 	$result_parse = $parse->getStatementParse();
 	if ($result_parse == 1){
 		echo "<br/> Новый исполнитель был добавлен <br/>";

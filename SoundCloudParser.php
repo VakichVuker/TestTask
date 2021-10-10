@@ -48,7 +48,7 @@ public function parse_artist($artist_link)
 //функция, возвращающая DOM по ссылке исполнителя
 protected function getXPATHdoc($artist_link){
     $httpClient = new \GuzzleHttp\Client(['verify' => false]);
-    $response = $httpClient->get($artist_link);
+    $response = $httpClient->get($artist_link . '/tracks');
     $htmlString = (string) $response->getBody();
     libxml_use_internal_errors(true);
     $doc = new DOMDocument();
